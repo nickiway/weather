@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import geolocation from "./slices/geolocation";
+import geolocation from "./slices/geolocationSlice";
 
 export const makeStore = () => {
   return configureStore({

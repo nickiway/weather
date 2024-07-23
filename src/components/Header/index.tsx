@@ -1,6 +1,6 @@
 "use client";
 
-import ThemePicker from "@/app/components/ModePicker";
+import ThemePicker from "@/components/ModePicker";
 
 const Header = () => {
   return (

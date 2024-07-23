@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Box, Button } from "@mui/material";
 import List from "./List";
 
-import { modes } from "@/app/constants";
+import { modes } from "@/constants";
 
 const ThemePicker = () => {
   const [open, setOpen] = useState<boolean>(false);

@@ -1,7 +1,7 @@
-import type { Mode } from "@/app/types/mode";
+import type { Mode } from "@/interfaces/mode";
 
 import { Box, styled, BoxProps } from "@mui/material";
-import Card from "@/app/components/ModePicker/Card";
+import Card from "@/components/ModePicker/Card";
 
 const StyledBox = styled(Box)<BoxProps>({
   display: "flex",

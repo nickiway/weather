@@ -1,10 +1,10 @@
 import { ThemeProvider } from "@mui/material";
-import StoreProvider from "@/app/lib/redux/Provider";
+import StoreProvider from "@/lib/redux/Provider";
 
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-import theme from "@/app/theme";
+import theme from "@/theme";
 
 interface LayoutProps {
   children: React.ReactNode;

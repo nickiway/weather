@@ -1,4 +1,4 @@
-import type { Mode } from "@/app/types/mode";
+import type { Mode } from "@/interfaces/mode";
 import { Card, CardProps, styled } from "@mui/material";
 
 const StyledCard = styled(Card)<CardProps>({

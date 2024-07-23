@@ -1,21 +1,31 @@
 "use client";
 
-import useGeolocation from "@/app/hooks/useGeolocation";
+import { useAppSelector } from "../../lib/redux/hooks";
 
-export default function Home() {
-  const { pending, position } = useGeolocation();
+import useFetchWeather from "../../hooks/useFetchWeather";
+import useGeolocation from "@/hooks/useGeolocation";
 
-  if (pending) return <div>Loading...</div>;
+import { CircularProgress } from "@mui/material";
+import LocationDisplay from "@/components/Geolocation/Display";
 
-  const { latitude, longitude } = position?.coords || {};
+const Home = () => {
+  const { city } = useAppSelector((state) => state.geolocation);
 
-  const uri = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=current&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`;
-  fetch(uri).then(console.log);
+  const { state: geolocation } = useGeolocation();
+  const { pending } = useFetchWeather(geolocation);
+
+  if (pending || geolocation.pending)
+    return (
+      <div>
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <>
-      <div>latitude {latitude} </div>
-      <div>longitude {longitude} </div>
+      <LocationDisplay {...city} />
     </>
   );
-}
+};
+
+export default Home;

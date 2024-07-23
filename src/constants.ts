@@ -1,4 +1,4 @@
-import { Mode } from "@/app/types/mode";
+import { Mode } from "@/interfaces/mode";
 
 export const modes: Mode[] = [
   {
